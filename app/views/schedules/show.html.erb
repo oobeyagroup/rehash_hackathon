@@ -19,7 +19,13 @@
   <b>Criteria:</b>
   <%= @schedule.criteria %>
 </p>
-
-
+	  <tr>
+	<td><%= image_tag @this_tweet.piclink %></td>
+	<td><%= @this_tweet.name %></td>
+  <td><%= @this_tweet.twitterhandle %></td>
+  <td><%= @this_tweet.text %></td>
+  <td><%= @this_tweet.created_at %></td>
+</tr>
+<br>
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>

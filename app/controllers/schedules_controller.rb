@@ -1,3 +1,5 @@
+require 'tweetstream'
+    
 class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
@@ -14,11 +16,28 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @schedule }
+  
+puts "1"
+    TweetStream.configure do |config|
+      config.consumer_key       = '2ZlLFJN0JDIvSwVG3hWw'
+      config.consumer_secret    = 'oZsLqN9TQc1IERxGRMieRLmk6U5liqUQe9yVa863BLw'
+      config.oauth_token        = '23986022-9SfbGAvrKTvyCGxD6M28kA4vRLXlAMClBVerpPcYI'
+      config.oauth_token_secret = 'WFefjLwdcLqejcmFhYFXiBYOUzEihgLMS5HpVsm33w'
+      config.auth_method        = :oauth
     end
+puts "2"
+    status = TweetStream::Daemon.new('tracker start').sample
+puts "3"
+    @this_tweet = Twitstream.new  :name => status.user.name,
+                      :twitterhandle => status.user.screen_name,
+                      :text => status.text,
+                      :tweeted_at => status.created_at,
+                      :piclink =>  status.user.profile_image_url
+    
+                      respond_to do |format|
+                        format.html # show.html.erb
+                        format.json { render json: @schedule }
+                      end  
   end
 
   # GET /schedules/new
