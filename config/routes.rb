@@ -1,4 +1,6 @@
 Rehash::Application.routes.draw do
+  resources :users
+
   resources :tweetstreams
 
   # The priority is based upon order of creation:
