@@ -8,8 +8,16 @@
 </head>
 <body>
 <header>
+	<nav>
+		<%= link_to "Schedule", schedules_url%> |
+		<%= link_to "All Tweets", twitstreams_url%> |
+		<%= link_to "Users", users_url%> |
+	</nav>
 <h1>Welcome to Rehash!!</h1>
-
+  <p id="notice"><%= notice %></p>
+	<% if session[:user_name].present? %>
+		Hey There, <%= session[:user_name] %>!        (<%= link_to "logoff", logoff_url %>)
+	<% end %>
 </header>
 
 <%= yield %>
@@ -19,7 +27,7 @@
 	<br>
 	<nav>
 		<%= link_to "Schedule", schedules_url%> |
-		<%= link_to "All Tweets", tweetstreams_url%> |
+		<%= link_to "All Tweets", twitstreams_url%> |
 		<%= link_to "Users", users_url%> |
 	</nav>
 </footer>

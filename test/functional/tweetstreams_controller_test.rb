@@ -2,13 +2,13 @@ require 'test_helper'
 
 class TweetstreamsControllerTest < ActionController::TestCase
   setup do
-    @tweetstream = tweetstreams(:one)
+    @twitstream = twitstreams(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:tweetstreams)
+    assert_not_nil assigns(:twitstreams)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class TweetstreamsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create tweetstream" do
+  test "should create twitstream" do
     assert_difference('Tweetstream.count') do
-      post :create, tweetstream: { created_at: @tweetstream.created_at, name: @tweetstream.name, text: @tweetstream.text }
+      post :create, twitstream: { created_at: @twitstream.created_at, name: @twitstream.name, text: @twitstream.text }
     end
 
-    assert_redirected_to tweetstream_path(assigns(:tweetstream))
+    assert_redirected_to twitstream_path(assigns(:twitstream))
   end
 
-  test "should show tweetstream" do
-    get :show, id: @tweetstream
+  test "should show twitstream" do
+    get :show, id: @twitstream
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @tweetstream
+    get :edit, id: @twitstream
     assert_response :success
   end
 
-  test "should update tweetstream" do
-    put :update, id: @tweetstream, tweetstream: { created_at: @tweetstream.created_at, name: @tweetstream.name, text: @tweetstream.text }
-    assert_redirected_to tweetstream_path(assigns(:tweetstream))
+  test "should update twitstream" do
+    put :update, id: @twitstream, twitstream: { created_at: @twitstream.created_at, name: @twitstream.name, text: @twitstream.text }
+    assert_redirected_to twitstream_path(assigns(:twitstream))
   end
 
-  test "should destroy tweetstream" do
+  test "should destroy twitstream" do
     assert_difference('Tweetstream.count', -1) do
-      delete :destroy, id: @tweetstream
+      delete :destroy, id: @twitstream
     end
 
-    assert_redirected_to tweetstreams_path
+    assert_redirected_to twitstreams_path
   end
 end

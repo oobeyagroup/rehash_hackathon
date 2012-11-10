@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @twitstream.text %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @twitstream.name %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @twitstream.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_twitstream_path(@twitstream) %> |
+<%= link_to 'Back', twitstreams_path %>

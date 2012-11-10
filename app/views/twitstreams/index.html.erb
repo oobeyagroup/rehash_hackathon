@@ -1,0 +1,29 @@
+<h1>Listing twitstreams</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>Name</th>
+    <th>Created at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @twitstreams.each do |twitstream| %>
+
+	  <tr>
+	<%#= image_tag twitstream.piclink %>
+	<td><%= image_tag twitstream.piclink %></td>
+	<td><%= twitstream.name %></td>
+    <td><%= twitstream.twitterhandle %></td>
+    <td><%= twitstream.text %></td>
+    <td><%= twitstream.created_at %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tweetstream', new_twitstream_path %>

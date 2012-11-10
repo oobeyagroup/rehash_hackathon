@@ -1,5 +1,9 @@
 Rehash::Application.routes.draw do
-  
+
+  get 'sessions/hi' => 'Sessions#hi', :as => 'login'
+  post 'sessions/introduce' => 'Sessions#introduce'
+  get 'sessions/bye', :as => 'logoff'
+
   root :to => 'home#index'
   
   get '/home', :controller => 'home', :action => 'index'
@@ -8,7 +12,7 @@ Rehash::Application.routes.draw do
 
   resources :users
 
-  resources :tweetstreams
+  resources :twitstreams
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
