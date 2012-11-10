@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+<h1>Welcome to Rehash!!</h1>
+
+</header>
 
 <%= yield %>
 
 </body>
+<footer>
+	<br>
+	<nav>
+		<%= link_to "Schedule", schedules_url%> |
+		<%= link_to "All Tweets", tweetstreams_url%> |
+		<%= link_to "Users", users_url%> |
+	</nav>
+</footer>
 </html>

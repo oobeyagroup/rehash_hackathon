@@ -1,4 +1,9 @@
 Rehash::Application.routes.draw do
+  
+  root :to => 'home#index'
+  
+  get '/home', :controller => 'home', :action => 'index'
+  
   resources :schedules
 
   resources :users
