@@ -1,4 +1,6 @@
 Rehash::Application.routes.draw do
+  resources :schedules
+
   resources :users
 
   resources :tweetstreams
