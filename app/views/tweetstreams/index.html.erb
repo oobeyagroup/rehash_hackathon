@@ -1,0 +1,27 @@
+<h1>Listing tweetstreams</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>Name</th>
+    <th>Created at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tweetstreams.each do |tweetstream| %>
+  <tr>
+    <td><%= tweetstream.text %></td>
+    <td><%= tweetstream.name %></td>
+    <td><%= tweetstream.created_at %></td>
+    <td><%= link_to 'Show', tweetstream %></td>
+    <td><%= link_to 'Edit', edit_tweetstream_path(tweetstream) %></td>
+    <td><%= link_to 'Destroy', tweetstream, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tweetstream', new_tweetstream_path %>
